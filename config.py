@@ -1,9 +1,9 @@
 # Whether or not you use BibDesk to handle your references (will automatically
 # export BibTex references into the currently open BibDesk bilbiography)
-USE_BIBDESK = True
+USE_BIBDESK = False
 
 # The default categories to search if no other categories are specified
-DEFAULT_CATEGORIES = ['quant-ph']
+DEFAULT_CATEGORIES = ["quant-ph", "hep-th", "hep-lat"]
 
 # Whether or not to include the abstract in exported BibTex references
 INC_ABSTRACT = True
