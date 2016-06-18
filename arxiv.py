@@ -87,12 +87,19 @@ for (i, (a, key_score)) in enumerate(articles):
     # Output formatted result
     else:
         mark = " ** " if a['primary'] not in DEFAULT_CATEGORIES else ""
+        date = ""
+        try:
+            if a["published"]:
+                date = time.strftime("%Y-%m-%d", a['published']) 
+        except:
+            pass
+
         print OUTPUT_FORMAT.format(**{
             'i':          (i+1),
             'mark':       mark,
             'cate':       a['primary'],
             'score':      key_score,
-            'date':       time.strftime("%Y-%m-%d", a['published']),
+            'date':       date,
             'arxiv_id':   a['id'],
             'title':      arxiv.clean(a['title']),
             'author':     a['authors'],
